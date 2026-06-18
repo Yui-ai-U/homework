@@ -50,3 +50,29 @@ def show_basic_operations(a, b):
         print(f"{a} ÷ {b} = 計算できません（0で割ることはできません）")
     else:
         print(f"{a} ÷ {b} = {a / b}")
+
+def show_integer_functions(a, b):
+    """整数のときだけ使える追加機能を表示する関数"""
+    print("\n【整数向けの追加機能】")
+
+    if not (is_integer_number(a) and is_integer_number(b)):
+        print("小数が含まれているため、最大公約数・最小公倍数・素因数分解は省略します。")
+        return
+
+    int_a = int(a)
+    int_b = int(b)
+
+    if int_a == 0 and int_b == 0:
+        print("0と0の最大公約数・最小公倍数は計算できません。")
+    else:
+        gcd_value = math.gcd(int_a, int_b)
+        print(f"最大公約数：{gcd_value}")
+
+        if int_a == 0 or int_b == 0:
+            print("最小公倍数：0")
+        else:
+            lcm_value = abs(int_a * int_b) // gcd_value
+            print(f"最小公倍数：{lcm_value}")
+
+    print(f"{int_a} の素因数分解：{prime_factorization(abs(int_a))}")
+    print(f"{int_b} の素因数分解：{prime_factorization(abs(int_b))}")
