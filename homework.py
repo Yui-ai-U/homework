@@ -12,3 +12,7 @@ def get_number(message):
             return float(value)
         except ValueError:
             print("数字を入力してください。")
+
+def is_integer_number(value):
+    """float型の値が整数として扱えるか判定する関数"""
+    return value.is_integer()
