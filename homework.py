@@ -114,3 +114,21 @@ def calculation_quiz(a, b):
         print("正解です！")
     else:
         print(f"不正解です。正解は {correct_answer} です。")
+
+def main():
+    print("四則演算＋αプログラム")
+    print("2つの数字を入力すると、四則演算と追加機能を実行します。")
+
+    a = get_number("1つ目の数字を入力してください：")
+    b = get_number("2つ目の数字を入力してください：")
+
+    show_basic_operations(a, b)
+    show_integer_functions(a, b)
+    show_ratio(a, b)
+    calculation_quiz(a, b)
+
+    print("\nプログラムを終了します。")
+
+
+if __name__ == "__main__":
+    main()
