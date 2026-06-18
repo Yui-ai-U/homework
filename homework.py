@@ -38,3 +38,15 @@ def prime_factorization(n):
         factors.append(n)
 
     return " × ".join(map(str, factors))
+
+def show_basic_operations(a, b):
+    """四則演算の結果を表示する関数"""
+    print("\n【四則演算の結果】")
+    print(f"{a} + {b} = {a + b}")
+    print(f"{a} - {b} = {a - b}")
+    print(f"{a} × {b} = {a * b}")
+
+    if b == 0:
+        print(f"{a} ÷ {b} = 計算できません（0で割ることはできません）")
+    else:
+        print(f"{a} ÷ {b} = {a / b}")
