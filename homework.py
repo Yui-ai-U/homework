@@ -76,3 +76,14 @@ def show_integer_functions(a, b):
 
     print(f"{int_a} の素因数分解：{prime_factorization(abs(int_a))}")
     print(f"{int_b} の素因数分解：{prime_factorization(abs(int_b))}")
+
+def show_ratio(a, b):
+    """2つの数の比を約分して表示する関数"""
+    print("\n【比の約分】")
+
+    if b == 0:
+        print("2つ目の数が0のため、比の約分はできません。")
+        return
+
+    ratio = Fraction(a / b).limit_denominator()
+    print(f"{a} : {b} = {ratio.numerator} : {ratio.denominator}")
