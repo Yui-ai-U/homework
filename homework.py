@@ -87,3 +87,30 @@ def show_ratio(a, b):
 
     ratio = Fraction(a / b).limit_denominator()
     print(f"{a} : {b} = {ratio.numerator} : {ratio.denominator}")
+
+def calculation_quiz(a, b):
+    """入力した2つの数を使って計算クイズを出す関数"""
+    print("\n【おまけ：計算クイズ】")
+
+    operators = ["+", "-", "×"]
+    if b != 0:
+        operators.append("÷")
+
+    operator = random.choice(operators)
+
+    if operator == "+":
+        correct_answer = a + b
+    elif operator == "-":
+        correct_answer = a - b
+    elif operator == "×":
+        correct_answer = a * b
+    else:
+        correct_answer = a / b
+
+    print(f"問題：{a} {operator} {b} = ?")
+    user_answer = get_number("答えを入力してください：")
+
+    if abs(user_answer - correct_answer) < 1e-8:
+        print("正解です！")
+    else:
+        print(f"不正解です。正解は {correct_answer} です。")
